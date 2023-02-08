@@ -1,10 +1,10 @@
 ## How does it work (Laravel 9 based):
 
-1. Request goes to /routers/web.php and call action ``main`` in the controller ``/app/Http/Controllers/NewsSearchController.php``. All the request data is prepared in that action method and object of class ``/app/Http/Resources/NewsRepository.php`` and method ``getList`` with prepared data is called.
+1. Request goes to /routers/web.php and call action ``main`` in the controller ``/app/Http/Controllers/NewsSearchController.php``. All the request data is prepared in that action method and object of class ``/app/Http/Resources/NewsRepository.php`` is created and method ``getList`` with prepared data is called.
 <br><br>
-2. ``/app/Http/Resources/NewsRepository.php`` is responsible for getting news data from some source. In this case news data is got from e...bot API using ``/app/Http/Service/EchoBotAPI.php``. And controller doesn't care about where ``NewsRepository`` gets news data.
+2. ``/app/Http/Resources/NewsRepository.php`` is responsible for getting news data from some source. In this case news data is got from EchoBot API using ``/app/Http/Service/EchoBotAPI.php``. And controller doesn't care about where ``NewsRepository`` gets news data.
 <br><br>
-3. ``/app/Http/Service/EchoBotAPI.php`` is responsible for any request to EchoBot server. It implements the way how to request to the server. So ``NewsRepository`` doesn't care how and where does ``EchoBotAPI`` get data.
+3. ``/app/Http/Service/EchoBotAPI.php`` is responsible for any request to EchoBot API server. It implements the way how to request to the server. So ``NewsRepository`` doesn't care how and where does ``EchoBotAPI`` get data.
 
 ## Installation:
 
