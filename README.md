@@ -1,5 +1,3 @@
-Laravel based
-
 ## How does it work (Laravel 9 based):
 
 1. Request goes to /routers/web.php and call action ``main`` in the controller ``/app/Http/Controllers/NewsSearchController.php``. All the request data is prepared in that action method and object of class ``/app/Http/Resources/NewsRepository.php`` and method ``getList`` with prepared data is called.
